@@ -38,7 +38,6 @@ copy_dc_home_datasets ()
 
 
   irsync -rs i:/iplant/home/shared/cyverse_training/workshop_materials/genomics_data_carpentry_2_0_release/ /scratch/docker-persistant >/var/log/williams_bootscript.log 2>&1
-  chown -R $ATMO_USER /scratch
   docker run --restart on-failure -p 21:22 -p 8787:8787 --cpus="4" --name dc_genomics -d -v /scratch/docker-persistant:/docker-persistant jasonjwilliamsny/dc_genomics:dev_1.8
 
 }
